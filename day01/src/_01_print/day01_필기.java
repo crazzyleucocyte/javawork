@@ -1,4 +1,4 @@
-package day01;
+package _01_print;
 
 public class day01_필기 {
 	public static void main(String[] args) {
