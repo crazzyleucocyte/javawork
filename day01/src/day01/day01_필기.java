@@ -36,6 +36,8 @@ public class day01_필기 {
 //		상수의 이름은 대문자로 한다
 //		단어는_로 구분
 //		ex)PI, MAX, MIN_SCORE
+		//https://github.com/professorjiwon/javawork
+//		강사님 깃허브
 		
 		
 		
