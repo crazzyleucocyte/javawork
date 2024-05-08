@@ -76,6 +76,7 @@ public class day01_필기 {
 	 * double nextDouble()
 	 * boolean nextBoolean()
 	 * 		 * 
+	 * test중입니다.
 		 */
 	}
 }
