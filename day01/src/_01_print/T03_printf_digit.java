@@ -27,7 +27,7 @@ public class T03_printf_digit {
 		System.out.printf("%.4f\n",3.54683);
 		System.out.printf("%.5f\n",3.54683);
 		System.out.printf("%.6f\n",3.54683);
-
+		System.out.format("%.6f\n",3.54683);
 		//정수부를 입력하지 않을 경우 자동으로 맞춰주는데 실수부만큼 소숫점 아랫자리를 나타낸다
 		//가장 자주 사용하는 코드로 실수의 소숫점을 맞추는데 쓰인다
 

@@ -40,8 +40,8 @@ public class day01_필기 {
 //		강사님 깃허브
 
 		/*
-		 * System.out.printf("%d",5); System.out.format("%d",5); printf와 format 둘 다 똑같이
-		 * 쓰이므로 둘 중 하나를 쓰면 된다 
+		 * System.out.printf("%d",5); System.out.format("%d",5); 
+		 * printf와 format 둘 다 똑같이 쓰이므로 둘 중 하나를 쓰면 된다 
 		 * %b: boolean 
 		 * %d : 10진수 정수 
 		 * %o : 8진수 정수 
