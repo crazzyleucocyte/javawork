@@ -16,6 +16,14 @@ public class T02_Ex01 {
 		int matScore = s.nextInt();
 		int sum = korScore+comScore+matScore;
 		System.out.println("세 과목의 총점은 : "+sum+" 평균은 : "+(sum/3));
+		
+		int score[]=new int[2];
+		
+		System.out.println("국어점수");
+		score[0]=s.nextInt();
+		System.out.println("컴터 점수");
+		score[1]=s.nextInt();
+		
 
 	}
 
