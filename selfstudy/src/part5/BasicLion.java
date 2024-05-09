@@ -64,6 +64,9 @@ public class BasicLion {
 		System.out.println("a Lion : "+a.sleeping());
 		System.out.println("b Lion : "+b.sleeping());
 		
+		a=b=null;
+		System.gc();
+		
 		
 		
 	}

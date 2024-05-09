@@ -32,9 +32,9 @@ public class T04_overlap_if {
 				System.out.println("101에서 200 사이의 숫자");
 			}
 		} else {//음수~100
-			if(num1<0) {
+			if(num1<0) {//음수
 				System.out.println("음수");
-			} else {
+			} else {//0~100
 				System.out.println("0에서 100사이의 숫자");
 			}
 		}
