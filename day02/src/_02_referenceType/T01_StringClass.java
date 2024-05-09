@@ -20,6 +20,11 @@ public class T01_StringClass {
 		System.out.println("주소가 같은가?"+(str3==str4));
 		System.out.println("값이 같은가?"+(str3.equals(str4)));
 		
+		if(name.compareTo(str4) !=0) {//compareto는 서로 같으면 0
+			System.out.println("다르다");
+		}else System.out.println("같다");
+		System.out.println(name.compareTo(myName));
+		
 
 	}
 

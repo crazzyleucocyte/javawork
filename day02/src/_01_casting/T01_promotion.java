@@ -15,8 +15,10 @@ public class T01_promotion {
 		System.out.println("'김'의 유니코드는 "+inch);//44608
 		System.out.println(ch1);//김
 
-		double d1= int1;//int>>double
+		double d1= int1;//int>>double 오류 발생하지 않음
 		System.out.println(d1);
+		
+		float f1 = int1;//int>>float오류 발생 안함
 		
 		d1 = inch;// char>>int>>double 그냥 int임
 		System.out.println(inch);

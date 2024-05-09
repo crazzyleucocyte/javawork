@@ -1,8 +1,8 @@
 package day02;
 
-import java.util.Scanner;
 
-public class next {
+
+public class String_ {
 
 	public static void main(String[] args) {
 		/*
@@ -45,6 +45,8 @@ public class next {
 		 *
 		 *
 		 */
+		int a =1;
+		System.out.println(a);
 		
 	}
 
