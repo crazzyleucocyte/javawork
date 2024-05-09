@@ -7,7 +7,7 @@ public class T06_Ex01 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 //		1. 키보드로 입력 받은 하나의 정수가 양수이면 “양수다“, 양수가 아니면 “양수가 아니다“를 출력하세요.
-		/*System.out.print("정수를 입력해주세요 :");
+		System.out.print("정수를 입력해주세요 :");
 		int num = s.nextInt();
 		System.out.println(num>0?"양수다.":"양수가 아니다.");
 		
@@ -96,7 +96,7 @@ public class T06_Ex01 {
 		char hyphen =idNum.charAt(6);
 		char gender3 =idNum.charAt(7);
 		System.out.println(hyphen=='-'?(gender3=='1'||gender3=='3'?"당신은 남자입니다.":(gender3=='2'||gender3=='4'?"당신은 여자입니다.":"성별을 구분할 수 없습니다.")):"\'-\'을 포함해주세요.");
-		*/
+		
 //
 //		9. 키보드로 정수 두 개를 입력 받아 각각 변수(num1, num2)에 저장하세요.
 //		그리고 또 다른 정수를 입력 받아 그 수가 num1 이하거나 num2 초과이면 true를 출력하고
