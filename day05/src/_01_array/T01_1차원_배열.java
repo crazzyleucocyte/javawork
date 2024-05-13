@@ -31,6 +31,10 @@ public class T01_1차원_배열 {
 			arrayInt4[i]=i+1;
 		};
 		
+		//객체의 초기 값
+//		int, double, char =0
+//		String =null
+//		boolean false
 		
 		
 		
