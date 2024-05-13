@@ -33,6 +33,8 @@ public class T07_ex02 {
 		
 		System.out.println("1부터 100까지 5의 배수의 합은"+sum+"입니다.");
 		
+		
+		
 	}
 
 }
