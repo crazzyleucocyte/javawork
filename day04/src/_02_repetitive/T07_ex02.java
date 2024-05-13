@@ -36,6 +36,7 @@ public class T07_ex02 {
 		
 		
 		
+<<<<<<< HEAD
 		
 		for(int i=1;i<=6;i++) {
 			for(int s=0;s <=6-i;s++	){
@@ -54,6 +55,8 @@ public class T07_ex02 {
 				System.out.print("*");
 			}System.out.println();
 		}
+=======
+>>>>>>> 40c6d6db17aec25ba76a5f65773f63edb73292b3
 	}
 
 }
