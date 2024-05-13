@@ -32,7 +32,28 @@ public class T07_ex02 {
 		System.out.println("1부터 100까지 5의 배수의 합은"+sum+"입니다.");
 		
 		System.out.println("1부터 100까지 5의 배수의 합은"+sum+"입니다.");
+	
 		
+		
+		
+		
+		for(int i=1;i<=6;i++) {
+			for(int s=0;s <=6-i;s++	){
+			System.out.print(" ");
+			}
+			for(int j=1;j<=i*2-1;j++) {
+				System.out.print("*");
+			}System.out.println();
+		}
+		
+		for(int i=5;i>=1;i--) {
+			for(int s=0;s<=6-i;s++){
+		System.out.print(" ");	
+		}
+			for(int j=1;j<=i*2-1;j++) {
+				System.out.print("*");
+			}System.out.println();
+		}
 	}
 
 }
