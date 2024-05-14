@@ -21,6 +21,7 @@ public class T01_main_car {
 		s2000.speedDown();
 		s2000.colorModify();
 		System.out.println(s2000.color);
+	
 	}
 
 }
