@@ -44,12 +44,21 @@ public class T07_향상된for문 {
 		//3개를 넣을 수 있는 문자열 배열을 만들어서 값을 넣고
 		//10개짜리 배열을 만들어서 복사하여 넣기(인덱스 5번부터 2개만 넣기)
 		
-		
+		//라이브러리 사용
 		String home[]= {"벌써","집","가고 싶다",};
 		String please[]=new String[10];
 		System.arraycopy(home, 1, please, 5, 2);
 		System.out.println(Arrays.toString(please));
-		
+		//for문 사용
+		for(int i =0;i<home.length;i++) {
+			please[i+5]=home[i];//5부터 1씩 더하면서 새로운 변수의 5번째부터 입력
+		}
+		//향상된 fot문 사용
+		int index = 5;
+		for(String str:home) {
+			please[index++]=str;//index를 5부터 시작히새ㅓ 1씩 더해가면서 입력
+		}
+		System.out.println(Arrays.toString(please));
 		
 		
 		
