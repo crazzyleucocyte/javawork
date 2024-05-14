@@ -7,31 +7,28 @@ public class T05_lotto {
 	public static void main(String[] args) {
 
 		// p.122
-		//실패
+		//성공
 		// 1. 6개의 1차원 배열
 		// 2. 1~45 숫자를 랜덤으로 추출해서 배열에 넣기
 		// 3. 배열에 들어있는 값과 랜덤 추출한 값이 같은가 비교
 		// 4. 다르면 배열에 넣기, 같은값이면 다시 랜덤 추출
 		int lotto1[] = new int[6];
 		int temp1 = 0;
-		boolean insert=false;
-		for (int i = 0; i < lotto1.length; i++) { // i는 6개의 번호 중 순서
+		boolean check=false;
+		while (lotto1[lotto1.length-1]==0) { // i는 6개의 번호 중 순서
+			check=false;
 
-			
-				int num = (int) (Math.random() * 45) + 1; // 번호 추출
-				System.out.println(num);
+			int num = (int) (Math.random() * 45) + 1; // 번호 추출
+			System.out.println(num);
 
-				number: for (int d = 0; d < lotto1.length; d++) { // 뽑은 번호가 이미 있는지 확인
-					if (lotto1[d] == num) {
-						insert = true;
-						break;
-					} else {
-						lotto1[i] = num;
-//						break again;
-
-					}
-				}
-			
+			for (int d = 0; d < lotto1.length; d++) { // 뽑은 번호가 이미 있는지 확인
+				if (lotto1[d] == num) 
+					check = true;
+				break;//같은 수가 나왔을 경우 break를 안하고 나머지 배열을 돌려도 되지만 break를 넣어서 끝내주는게 빨리 끝난다
+			}
+			if(check) continue;
+			lotto1[temp1]=num;
+			temp1++;
 		}
 		System.out.println(Arrays.toString(lotto1));
 		/*
