@@ -1,5 +1,5 @@
 package _03_tv;
-
+import _04_car.*;
 import java.util.Scanner;
 
 public class T01_main_tv {
@@ -22,7 +22,8 @@ public class T01_main_tv {
 		System.out.println("현재 볼륨 : "+tv1.volume(12));
 		tv1.power();
 //		System.out.println("tv 상태 : "+tv1.power);
-	
+	    
+		
 	
 	
 	}
