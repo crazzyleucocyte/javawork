@@ -8,7 +8,7 @@ public class T01_main_book {
 		T01_api_book b1 = new T01_api_book();
 		T01_api_book b2 =new T01_api_book("개미");
 		T01_api_book b3 =new T01_api_book("개미",9788932903491L);
-		T01_api_book b4 =new T01_api_book("개미",9788932903491L,7900);
+		T01_api_book b4 =new T01_api_book("개미",9788932903491L,8517900);
 		
 		b1.printOut();
 		b2.printOut();

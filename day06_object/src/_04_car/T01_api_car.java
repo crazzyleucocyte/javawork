@@ -11,6 +11,7 @@ public class T01_api_car {
 	String color="yelloe";
 	int speed;
 	boolean engStart;
+	
 	Scanner s = new Scanner(System.in);
 	
 	void engineOnOff() {
@@ -35,8 +36,9 @@ public class T01_api_car {
 		}else
 			System.out.println("시동이 꺼져있습니다. 시동을 걸어주세요");
 	}
+	
 	String colorModify() {
-		System.out.print("변경하실 모델 명을 입력해주세요 : ");
+		System.out.print("변경하실 색상을 입력해주세요 : ");
 		String inputcolor=s.nextLine();
 		color=inputcolor;
 		return color;
