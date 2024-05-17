@@ -10,11 +10,7 @@ public class T01_main_bank {
 		T01_api_bank bank = new T01_api_bank();
 		
 		while(true) {
-			System.out.println("보이는 ARS`"
-					+ ""
-					+ ""
-					+ ""
-					+ "");
+			System.out.println("보이는 ARS 서비스를 ");
 			
 			
 //			switch(ars)
