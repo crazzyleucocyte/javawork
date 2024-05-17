@@ -5,8 +5,13 @@ import java.util.Scanner;
 public class T01_api_bank {
 	private int balance;
 	private int password;
+	private boolean passwordCheck=false;
+	
+	
+	
 	Scanner psw = new Scanner(System.in);
 	// 비밀번호 생성 입금 출금을 조금 더 메인쪽으로 옮기도록 재작성 필요
+	// 보이는 ars같은거
 	void Deposit(int money) {
 		balance+=money;
 	}
@@ -19,6 +24,7 @@ public class T01_api_bank {
 		if(password1==password2) {
 			System.out.println("비밀번호 설정이 완료되었습니다.");
 			this.password=password1;
+			passwordCheck=true;
 			break;
 		}else {
 			System.out.println("입력하신 비밀번호가 서로 다릅니다.");
