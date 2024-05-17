@@ -43,11 +43,11 @@ public class T01_api_book {
 				
 				switch (countprice) {
 				case 0: //자릿수가 3의 배수(3,6,9)인 경우
-					toInt+=toString.charAt(i-1);
-					if((i)%3==0) {
+					if((i)%3==1) {
 						if(i==toString.length())break;//마지막,는 123,456,이렇게 되기 떄문에 제외한다
 					toInt+=",";
 					}
+					toInt+=toString.charAt(i-1);
 					break;
 				case 1: //3의 배수+1인 경우 1,234
 					if((i)%3==2) toInt+=",";

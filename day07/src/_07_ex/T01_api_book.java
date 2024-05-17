@@ -34,7 +34,7 @@ public class T01_api_book {
 			System.out.println("책 가격 : "+price+"\n");
 		}
 		
-		String changePrice(int price) {//3자리마다 ,를 넣는 코드
+		public String changePrice(int price) {//3자리마다 ,를 넣는 코드
 			String toString= Integer.toString(price);
 			String toInt="";
 			int countprice=toString.length()%3; //가격의 자릿수를 확인하는 변수
