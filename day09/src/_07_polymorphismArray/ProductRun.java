@@ -1,4 +1,6 @@
-package _06_polymorphismEx;
+package _07_polymorphismArray;
+
+import java.util.Arrays;
 
 public class ProductRun {
 
@@ -16,11 +18,10 @@ public class ProductRun {
 		/*
 		 * 궁금점:
 		 * new Tv를 .buy에 넣을떄 강제 형변환은 어떻게 일어나나
-		 * 
-		 * Product p =new Tv();
-		 * 
 		 * toString은 어떤 역할을 하나
 		 */
+		
+		b.info();
 	}
 
 }
