@@ -16,6 +16,9 @@ package _05_polymorphism;
 		void water() {
 			System.out.println("물을 뿌립니다!~~~~");
 		}
+		void stop() {
+			System.out.println("stop!");
+		}
 	}
 	public class T03_PolyRun {
 	
@@ -26,13 +29,14 @@ package _05_polymorphism;
 		fCar.water();
 		fCar.drive();
 		fCar.stop();
-		
+		Car a = new Car();
+		a.stop();
 		//부모에 자식을 넣음
 		Car car = fCar;
 		//fCar는 이미 객체가 생성되어 주소를 나타내는데 그 주소를 car에 넣는다
 		//그래서 fcar와 car 총 두 개의 변수가 생겼고 두 변수의 주소는 같다
+		car.stop();//
 		car.drive();
-		car.stop();
 //		car.water(); 오류
 		
 		//자식에 부모를 넣음

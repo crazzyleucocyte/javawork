@@ -30,7 +30,7 @@ public class Buyer {
 			sum+=cart[i].price;
 			if(i==index-1)list+=cart[i];
 			else list += cart[i]+", ";
-		}System.out.println("구입한 총 금액 : "+sum+"만원");
+		}System.out.println("\n구입한 총 금액 : "+sum+"만원");
 		System.out.println("구입한 목록 : "+list);
 	}
 	
