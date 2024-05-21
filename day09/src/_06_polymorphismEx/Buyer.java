@@ -16,7 +16,7 @@ public class Buyer {
 //		
 //	}이렇게 하면 너무 비효율적이여서 강제 형변환을 해서 아래와 같이 한다 
 
-	void buy(Product p) {
+	void buy(Product p) {//p를 생성할때 new를 써서 객체 생성을 하지 않아도 된다
 		if(money<p.price) {
 			System.out.println("잔액부족");
 			return;//보이드에서 리턴할 경우 그냥 끝난다

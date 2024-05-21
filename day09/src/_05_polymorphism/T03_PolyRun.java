@@ -55,8 +55,13 @@ package _05_polymorphism;
 		//이 오류는 컴파일을 해야만 알 수 있는 오류로 빨간색으로 밑줄이 그어지지 않는다
 		//오류가 난 이유는 부모 클래스를 생성할때는 자식 객체가 생성되지 않는데 이 상태에서 형변환을 하면 
 		//해당 주소에 자식 클래스가 없기 떄문에 오류가 나는 것이다.
+		FireCar fCar3=null;
+//		FireCar fCar3 = (FireCar)car2;
 		
-		
+		//instandeOf : 좌측의 객체가 우측의 타입으로 만들어졌느냐 검사(true)
+		if(fCar3 instanceof FireCar) {
+		fCar3=(FireCar)car2;	
+		}else System.out.println("변환할 수 없음");
 		
 		
 		

@@ -16,10 +16,16 @@ public class T01_polyRun {
 	public static void main(String[] args) {
 		//자동 형변환 : 자식을 부모 타입으로 형변환
 		
+		A a = new A();
 		B b = new B();
 		C c = new C();
 		D d = new D();
 		E e = new E();
+		
+		
+		a=b;
+		b=(B)a; //이거만 쓰면 오류나지만 위에 a=b를 쓰고 쓰면 오류가 안난다
+		
 		
 		A a1 = b;//b는 사용하지 않고 A만 사용하겠다
 		A a2 = c;//C는 사용하지 않고 A만 사용하겠다

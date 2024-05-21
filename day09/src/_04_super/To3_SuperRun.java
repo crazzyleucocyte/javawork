@@ -36,7 +36,7 @@ class GrandChild extends Child3{
 public class To3_SuperRun {
 
 	public static void main(String[] args) {
-		GrandChild child = new GrandChild();
+		GrandChild child = new GrandChild();//자식의 객체를 생성하면 부모와 조부모의 객체도 생성이 된다.
 		//객체는 하나만 생성했는데 부모와 자식까지 생성자 메소드가 실행됐다
 		System.out.println(child.x);
 		System.out.println(child.y);
