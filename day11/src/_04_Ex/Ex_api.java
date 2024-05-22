@@ -6,6 +6,7 @@ public class Ex_api {
 	Scanner s = new Scanner(System.in);
 	int num1;
 	int num2;
+	
 	void inputNum() throws UserException{
 		System.out.println("1부터 100까지의 숫자 2개를 입력해주세요");
 		
