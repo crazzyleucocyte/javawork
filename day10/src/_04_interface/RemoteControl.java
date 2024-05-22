@@ -14,6 +14,10 @@ public interface RemoteControl {
 //	void setChannel(int channel);
 	//abstract이 생략되어도 보이지 않는것이지 써있음
 	
+	default void search(String msg) {
+		System.out.println("나중에 추가한 메소드"+msg);
+	}
+	
 	
 	
 	

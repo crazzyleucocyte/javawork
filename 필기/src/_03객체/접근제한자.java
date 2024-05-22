@@ -1,4 +1,4 @@
-package 객체;
+package _03객체;
 
 public class 접근제한자 {
 

@@ -23,6 +23,12 @@ System.out.println("Tv를 켭니다.");
 	
 		System.out.println("현재 음량 : "+this.volume);
 	}
+	
+	//인터페이스의 디폴트 메소드
+	@Override
+	public void search(String msg) {
+		System.out.println("msg");
+	}
 
 	
 }

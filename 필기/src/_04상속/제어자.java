@@ -1,4 +1,4 @@
-package 상속;
+package _04상속;
 
 public class 제어자 {
 	/*

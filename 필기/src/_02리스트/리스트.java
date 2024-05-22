@@ -1,4 +1,4 @@
-package 리스트;
+package _02리스트;
 
 import java.util.ArrayList;
 

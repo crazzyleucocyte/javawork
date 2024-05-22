@@ -1,4 +1,4 @@
-package day03;
+package _02day03;
 
 public class String {
 //	parseInt

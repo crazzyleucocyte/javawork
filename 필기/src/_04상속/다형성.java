@@ -1,4 +1,4 @@
-package 상속;
+package _04상속;
 
 public class 다형성 {
 	/*

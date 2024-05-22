@@ -1,3 +1,4 @@
+package _05추상클래스;
 
 public class 인터페이스 {
 

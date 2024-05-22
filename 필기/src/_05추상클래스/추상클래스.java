@@ -1,4 +1,4 @@
-package 추상클래스;
+package _05추상클래스;
 
 public class 추상클래스 {
 
