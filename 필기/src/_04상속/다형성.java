@@ -1,5 +1,6 @@
 package _04상속;
 
+
 public class 다형성 {
 	/*
 	 *다형성이란?
@@ -75,6 +76,16 @@ public class 다형성 {
 		//부모에 있는 모든 메소드를 사용 가능하지만 부모에서 자식으로 오버라이딩이 된 경우 자식의 메소드로 실행이 된다.
 		
 //		Child c = new Child();
+		
+		/*인스턴스 오브
+		 * 
+		 두개는 인스턴스 오브(객체가 해당 자료형으로 만들어졌나?)
+		if(ani instanceof Dog) {
+			dog=(Dog)ani;
+		}else {
+			System.out.println("변경 불가");
+		}
+		 */
 		
 		
 	}
