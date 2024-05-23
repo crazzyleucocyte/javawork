@@ -25,7 +25,7 @@ public class T06_classCast__이해안됨 {
 			System.out.println("변경 불가");
 		}
 		
-		} catch (Exception e) {
+		} catch (ClassCatchException e) {
 			System.out.println("부모 타입을 자식의 타입으로 형변환 할 수 없다");
 		}
 		*/
