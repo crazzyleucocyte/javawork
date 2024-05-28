@@ -18,7 +18,8 @@ class Point {
 
 
 }
-class Circle implements Cloneable{
+
+class Circle implements Cloneable{//클론을 하려면 반드시 clineable를 구현해야한다
 	Point p; //중심점(x, y)좌표
 	double r;//반지름
 
@@ -80,7 +81,7 @@ public class T05_cloneShallowDeepCopy {
 		System.out.println(copyStr[0]);
 		System.out.println(Arrays.toString(copyStr));
 		System.out.println(Arrays.toString(str));
-		System.out.println("---------------------------------------");
+		System.out.println("1---------------------------------------");
 
 		//깊은 복사
 		String deepcopy[]= new String[5];
@@ -88,21 +89,22 @@ public class T05_cloneShallowDeepCopy {
 			deepcopy[i]=str[i];
 		}
 		System.out.println(Arrays.toString(deepcopy));
-	System.out.println("---------------------------------------");
+	System.out.println("2---------------------------------------");
 		str[0]="a";
 		System.out.println(Arrays.toString(copyStr));
 		System.out.println(Arrays.toString(deepcopy));
-		System.out.println("---------------------------------------");
+		System.out.println("3---------------------------------------");
 		//클론은 깊은 복사가 된다
 		//깊은 복사는 복사하기 전 배열의 값을 변경해도 새로운 변수에서는 바뀌지 않지만 얕은 복사는 변경된다
 		
 		//2. Arrays.copyOf(원본배열, 복사할 길이)//깊은복사
 		String arrayCopy[]= Arrays.copyOf(str, str.length);
 		System.out.println(Arrays.toString(arrayCopy));
+		System.out.println("4---------------------------------------");
 		arrayCopy[2]="z";
 		System.out.println(Arrays.toString(arrayCopy));
 		System.out.println(Arrays.toString(str));
-		System.out.println("---------------------------------------");
+		System.out.println("5---------------------------------------");
 		
 		//3. Clone()
 //		Point p1 = new Point(1,5);
@@ -116,11 +118,11 @@ public class T05_cloneShallowDeepCopy {
 		c1.p.x=700;
 		System.out.println(c1.r);
 		System.out.println(c2.r);
-		System.out.println("---------------------------------------");
+		System.out.println("6---------------------------------------");
 		
 		System.out.println("c1 : "+c1);
 		System.out.println("c2 : "+c2);
-		System.out.println("---------------------------------------");
+		System.out.println("7---------------------------------------");
 		
 		Circle c3 = c1.deepclone();
 		c1.r=50.0;
