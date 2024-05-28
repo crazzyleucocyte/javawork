@@ -60,6 +60,7 @@ public class T01_calender_get {
 		//시간
 		System.out.println("시간(0~23) : "+ today.get(Calendar.HOUR_OF_DAY));
 		//AM, PM : am=0 pm=1
+		//ampm은 0과 1로 나와서 if문으로 만들어줘야 한다
 		int ampm=today.get(Calendar.AM_PM);
 		if(ampm==0) {
 			System.out.print("시간 : AM ");

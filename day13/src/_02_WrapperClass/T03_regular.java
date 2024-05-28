@@ -22,7 +22,7 @@ public class T03_regular {
 		// 이메일체크
 		//앞에는 문자나 숫자 최소 1개 이상  @  문자나 숫자 .문자
 		//앞에는 문자나 숫자 최소 1개 이상  @  문자나 숫자 .문자.문자
-		regExp="^[a-zA-Z]\\w+@\\w+\\.\\w+(\\.\\W+)";
+		regExp="^[a-zA-Z]\\w+@\\w+\\.\\w+(\\.\\w+)?";
 		data="alstjr7696@naver.com";
 		result = Pattern.matches(regExp, data);
 		if(result) {

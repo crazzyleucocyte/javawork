@@ -8,6 +8,7 @@ public class T03_calendar_연산 {
 		Calendar date1=Calendar.getInstance();
 		Calendar date2=Calendar.getInstance();
 		Calendar date3=Calendar.getInstance();
+		Calendar date4=Calendar.getInstance();
 
 		//(기준 날짜, 몇 일 후or전)
 		date1.add(Calendar.DATE, 100);
@@ -18,8 +19,10 @@ public class T03_calendar_연산 {
 	
 		date3.add(Calendar.MONTH, 2);//오늘부터 2달 후
 		System.out.println("오늘부터 2달 전 : "+(date3.get(Calendar.MONTH)+1)+"월"+date3.get(Calendar.DATE)+"일");
-	
-	
+		
+		date4.set(2022, 12, 15);
+		date4.add(Calendar.DATE, 600);
+		System.out.println("오늘부터 600일 후 : "+(date4.get(Calendar.YEAR))+"년"+(date4.get(Calendar.MONTH)+1)+"월"+date4.get(Calendar.DATE)+"일");
 	
 	
 	
