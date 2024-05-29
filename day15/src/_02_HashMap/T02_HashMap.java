@@ -39,18 +39,18 @@ public class T02_HashMap {
 			}
 		}
 		
-		System.out.println("imminseok가 있는 Id인가?"+map.containsKey("imminseok"));
-		//2. pw가 맞지 않으면 : pw가 맞지 않습니다 다시 수행
-		System.out.println("pw를 입력해주세요");
-		while(true) {
-			String inputpw=s.next();
-			if(map.containsValue(inputpw)) {
-				System.out.println("pw가 맞았습니다.");
-				break;
-			}else {
-				System.out.println("pw가 맞지 않았습니다. 다시 입력해주세요.");
-			}
-		}
+//		System.out.println("imminseok가 있는 Id인가?"+map.containsKey("imminseok"));
+//		//2. pw가 맞지 않으면 : pw가 맞지 않습니다 다시 수행
+//		System.out.println("pw를 입력해주세요");
+//		while(true) {
+//			String inputpw=s.next();
+//			if(map.containsValue(inputpw)) {
+//				System.out.println("pw가 맞았습니다.");
+//				break;
+//			}else {
+//				System.out.println("pw가 맞지 않았습니다. 다시 입력해주세요.");
+//			}
+//		}
 		
 		
 		//3. id와 pw가 맞으면 종료
