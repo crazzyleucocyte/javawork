@@ -17,7 +17,14 @@ public class _Class클래스 {
 	 * 위에 쓴것 보다는 getName을 많이 쓴다
 	 */
 	
-	
+	public static void main(String[] args) {
+		
+		String a = "a1234";
+		int b = Integer.parseInt(a);
+		System.out.println(b);
+		
+		char c[]=a.toCharArray();
+	}
 	
 	
 	
