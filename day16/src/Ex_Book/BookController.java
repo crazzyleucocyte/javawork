@@ -77,6 +77,7 @@ public class BookController extends Book {
 			bok=book.get(i);
 			if(bok.getTitle().equals(title)&&bok.getAuthor().equals(author)) {
 				book.remove(bok);
+				System.out.println(bok);
 				return bok;
 			}
 		}
