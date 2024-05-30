@@ -1,8 +1,9 @@
 package com.practic.list.music.model.vo;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Music {
+public class Music implements Comparable {
 
 	private String title;
 	private String singer;
@@ -58,8 +59,14 @@ public class Music {
 		return "Music [title=" + title + ", singer=" + singer + "]";
 	}
 	
-	public int compareTo(String anotherString) {
-		return singer.compareTo(anotherString);
+	
+
+	@Override
+	public int compareTo(Object o1) {
+//		if(Objet>o1)
+		
+		
+		return 0;
 	}
 	
 	
