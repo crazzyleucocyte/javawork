@@ -63,12 +63,19 @@ public class Music implements Comparable {
 
 	@Override
 	public int compareTo(Object o1) {
+			Music music = (Music)o1;
+			return music.getTitle().compareTo(this.getTitle());
+	}
+			
+			
+			
+			
+			
 		
 		
-		return this.compareTo(o1);
 	}
 	
 	
 	
-}
+
 
