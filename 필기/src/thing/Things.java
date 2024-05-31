@@ -46,3 +46,8 @@ int n;
         return this.n;
     }
 }
+
+class Apple<String>{
+	
+	
+}

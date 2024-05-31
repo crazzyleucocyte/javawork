@@ -63,10 +63,9 @@ public class Music implements Comparable {
 
 	@Override
 	public int compareTo(Object o1) {
-//		if(Objet>o1)
 		
 		
-		return 0;
+		return this.compareTo(o1);
 	}
 	
 	
