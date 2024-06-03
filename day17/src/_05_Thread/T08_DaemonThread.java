@@ -23,6 +23,7 @@ public class T08_DaemonThread {
 
 	public static void main(String[] args) {
 		AutoSaveThread auto = new AutoSaveThread();
+		//auto를 데몬 쓰레드로 지정
 		auto.setDaemon(true);
 		auto.start();
 		

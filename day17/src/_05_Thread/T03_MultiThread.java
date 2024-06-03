@@ -1,3 +1,4 @@
+
 package _05_Thread;
 
 import java.awt.Toolkit;
