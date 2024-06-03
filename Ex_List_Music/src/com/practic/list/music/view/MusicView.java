@@ -20,7 +20,7 @@ public class MusicView {
 //-------------------------------------------------	
 //	while반복문
 		while (endCheck) {
-			System.out.print("\n******* 메인 메뉴 *******" + "\n1. 마지막 위치에 곡 추가" + "\n2. 첫 위치에 곡 추가" + "\n3. 전체 곡 목록 출력"
+			System.out.print("\n====******* 메인 메뉴 *******====" + "\n1. 마지막 위치에 곡 추가" + "\n2. 첫 위치에 곡 추가" + "\n3. 전체 곡 목록 출력"
 					+ "\n4. 특정 곡 검색" + "\n5. 특정 곡 삭제" + "\n6. 특정 곡 정보 수정" + "\n7. 곡명 오름차순 정렬" + "\n8. 가수명 내림차순 정렬"
 					+ "\n9. 종료" + "\n\n메뉴 번호 입력");
 //-------------------------------------------------	
@@ -44,19 +44,20 @@ public class MusicView {
 				removeMusic();
 				break;
 			case 6:
-
+				setMusic();
 				break;
 			case 7:
-
+				ascTitle();
 				break;
 			case 8:
-
+				descSinger();
 				break;
 			case 9:
 				endCheck = false;
+				System.out.println("프로그램 종료");
 				break;
 			default:
-
+				System.out.println("1부터 9까지만 입력해주세요.");
 				break;
 			}
 		}
@@ -74,7 +75,7 @@ public class MusicView {
 
 			System.out.println("입력하신 정보가 맞으신가요?\n");
 			System.out.println("곡 명 : " + inputTitle + ", 가수명 : " + inputSinger);
-			System.out.print("예(Y) or 아니오(N)\nanswer : ");
+			System.out.print("예(Y) or 아니오(N) or 메뉴화면으로 나가기(X)\nanswer : ");
 
 			int answer = yOrN();
 			// y인 경우
@@ -91,8 +92,11 @@ public class MusicView {
 				System.out.println("\n다시 입력해주세요.");
 //				sc.nextLine();
 				// y나 n가 아닌 다른것을 입력한 경우
+			} else if(answer==2) {
+				System.out.println("메뉴 화면으로 나갑니다.");
+				return;
 			} else
-				System.out.println("\n(예/아니오),(y/n)만 입력해주세요.");
+				System.out.println("\n(예/아니오),(y/n/x)만 입력해주세요.");
 			sc.nextLine();
 
 		}
@@ -110,7 +114,7 @@ public class MusicView {
 
 			System.out.println("입력하신 정보가 맞으신가요?\n");
 			System.out.println("곡 명 : " + inputTitle + "가수명 : " + inputSinger);
-			System.out.print("예(Y) or 아니오(N)\nanswer : ");
+			System.out.print("예(Y) or 아니오(N) or 메뉴화면으로 나가기(X)\nanswer : ");
 
 			int answer = yOrN();
 			// y인 경우
@@ -130,11 +134,14 @@ public class MusicView {
 //				n를 선택한 경우
 			} else if (answer == -1) {
 				System.out.println("다시 입력해주세요.");
-				sc.nextLine();
+//				sc.nextLine();
+			} else if(answer==2) {
+				System.out.println("메뉴 화면으로 나갑니다.");
+				return;
 
 //				y나 n가 아닌 다른것을 입력한 경우
 			} else
-				System.out.println("(예/아니오),(y/n)만 입력해주세요.");
+				System.out.println("(예/아니오),(y/n/x)만 입력해주세요.");
 			sc.nextLine();
 
 		}
@@ -156,15 +163,14 @@ public class MusicView {
 //-------------------------------------------------	
 //	특정 곡 검색의 결과를 보여주는 메소드 
 	public void searchMusic() {
-//		체커를 통해 반복진행
-
-		System.out.println("****** 특정 곡 검색 ******");
-
 //		추가된 곡이 0이라면 메소드 종료
 		if (mc.listSize() == 0) {
 			System.out.println("곡이 존재하지 않습니다.\n곡을 추가해주세요.");
 			return;
 		}
+
+		System.out.println("****** 특정 곡 검색 ******");
+
 
 //		검색할 곡 입력 받기
 		System.out.print("곡 명 : ");
@@ -174,11 +180,11 @@ public class MusicView {
 		Music music = mc.searchMusic(inputTitle);
 
 //		검색한 곡이 없는 경우
-		if (music == null)
+		if (music == null) {
 			System.out.println("존재하지 않는 곡입니다.");
-
+			
 //		검색한 곡이 있는 경우 checker를 false하고 while문 종료 후 곡 정보 출력
-		else {
+		}else {
 			checker = false;
 			System.out.println(music);
 		}
@@ -188,6 +194,11 @@ public class MusicView {
 //-------------------------------------------------	
 //	특정 곡 삭제 결과를 보여주는 메소드
 	public void removeMusic() {
+//		추가된 곡이 0이라면 메소드 종료
+		if (mc.listSize() == 0) {
+			System.out.println("등록된 곡이 존재하지 않습니다.\n곡을 추가해주세요.");
+			return;
+		}
 //		체커를 통해 while문 반목
 		checker = true;
 		while (checker) {
@@ -195,16 +206,19 @@ public class MusicView {
 			System.out.print("삭제할 곡 명 : ");
 			inputTitle = sc.nextLine();
 
-//		추가된 곡이 0이라면 메소드 종료
-			if (mc.listSize() == 0) {
-				System.out.println("등록된 곡이 존재하지 않습니다.\n곡을 추가해주세요.");
-				return;
+//		검색한 곡이 없는 경우
+			Music music = mc.searchMusic(inputTitle);
+			if (music == null) {
+				System.out.println("존재하지 않는 곡입니다.");
+				
+//		검색한 곡이 있는 경우 checker를 false하고 while문 종료 후 곡 정보 출력
+			}else {
+				System.out.println("삭제하실 정보가 맞으신가요?\n");
+				System.out.println("곡 명 : " + music.getTitle() + "가수명 : " + music.getSinger());
 			}
 
 //		삭제할 곡 재확인
-			System.out.println("삭제하실 정보가 맞으신가요?\n");
-			System.out.println("곡 명 : " + inputTitle + "가수명 : " + inputSinger);
-			System.out.print("예(Y) or 아니오(N)\nanswer : ");
+			System.out.print("예(Y) or 아니오(N) or 메뉴화면으로 나가기(X)\nanswer : ");
 			// 삭제할 곡이 있는지 검색
 
 			int answer = yOrN();
@@ -221,30 +235,96 @@ public class MusicView {
 				// n를 선택한 경우
 			} else if (answer == -1) {
 				System.out.println("다시 입력해주세요.");
-				sc.nextLine();
+//				sc.nextLine();
+			} else if(answer==2) {
+				System.out.println("메뉴 화면으로 나갑니다.");
+				return;
 
 				// y나 n가 아닌 다른것을 입력한 경우
 			} else
-				System.out.println("(예/아니오),(y/n)만 입력해주세요.");
+				System.out.println("(예/아니오),(y/n/x)만 입력해주세요.");
+			sc.nextLine();
 		}
 	}
 
 //-------------------------------------------------	
 //	특정 곡 정보 수정 결과를 보여주는 메소드
 	public void setMusic() {
+//		추가된 곡이 0이라면 메소드 종료
+		if (mc.listSize() == 0) {
+			System.out.println("등록된 곡이 존재하지 않습니다.\n곡을 추가해주세요.");
+			return;
+		}
+		checker=true;
+		while(checker) {
+		System.out.println("****** 특정 곡 수정 ******");
+		System.out.print("검색할 곡 명 : ");
+		inputTitle = sc.nextLine();
 
+//		검색한 곡이 없는 경우
+		Music music = mc.searchMusic(inputTitle);
+		if (music == null) {
+			System.out.println("존재하지 않는 곡입니다.");
+			return;
+		}
+
+		System.out.print("수정할 곡 명 : ");
+		String setTitle = sc.nextLine();
+		System.out.print("수정할 가수 명 : ");
+		String setSinger = sc.nextLine();
+
+		Music setMusic = new Music(setTitle, setSinger);
+
+		System.out.println("정말 " + music + "을(를) " + setMusic + "으로 변경하시겠습니까?");
+		System.out.print("예(Y) or 아니오(N) or 메뉴화면으로 나가기(X)\nanswer : ");
+
+		int answer = yOrN();
+		// y인 경우
+		if (answer == 1) {
+			setMusic = mc.setMusic(inputTitle, new Music(setTitle, setSinger));
+			if (setMusic != null) {
+				// 곡 정보를 변경하는 과정에서 성공, 실패 판단 후 성공시 checker를 false로 바꾸어 while 탈출
+				checker = false;
+				System.out.println(music + "가 " + setMusic + "으로 변경되었습니다.");
+			} else {
+				System.out.println("변경하는 과정에서 오류가 발생하여 곡 변경에 실패했습니다.");
+			}
+
+			// n를 선택한 경우
+		} else if (answer == -1) {
+			System.out.println("다시 입력해주세요.");
+//				sc.nextLine();
+			// x선택한 경우
+		} else if (answer == 2) {
+			System.out.println("메뉴 화면으로 나갑니다.");
+			return;
+
+			// y나 n가 아닌 다른것을 입력한 경우
+		} else
+			System.out.println("(예/아니오),(y/n/x)만 입력해주세요.");
+		sc.nextLine();
+		}
 	}
 
 //-------------------------------------------------	
 //	곡 명 오름차순 결과 성공을 알리는 메소드
 	public void ascTitle() {
-
+		System.out.println("****** 곡 명 오름차순 정렬 ******");
+	if(mc.ascTitle()==1) {
+		System.out.println("정렬에 성공했습니다.");
+	}else {
+		System.out.println("정렬에 실패했습니다.");
+	}
 	}
 
 //-------------------------------------------------	
 //	곡 명 내림차순 결과 성공을 알리는 메소드
 	public void descSinger() {
-
+		System.out.println("****** 가수 명 내림차순 정 ******");
+		if(mc.descSinger()==1) {
+			System.out.println("정렬에 성공했습니다.");
+		}else
+			System.out.println("정렬에 실패했습니다.");
 	}
 
 //-------------------------------------------------	
@@ -255,9 +335,10 @@ public class MusicView {
 			return 1;
 		else if (yorn.equals("n") || yorn.equals("N") || yorn.equals("no") || yorn.equals("아니오"))
 			return -1;
-		else
+		else if(yorn.equals("x")||yorn.equals("X"))
+			return 2;
+		else 
 			return 0;
-
 	}
 
 }

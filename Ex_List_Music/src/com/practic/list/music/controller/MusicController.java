@@ -118,6 +118,8 @@ public class MusicController {
 		System.out.println(mc.printAll());
 		System.out.println(mc.descSinger());
 		System.out.println(mc.printAll());
+		mc.removeMusic("1111");
+		System.out.println(mc.printAll());
 		
 		
 		
