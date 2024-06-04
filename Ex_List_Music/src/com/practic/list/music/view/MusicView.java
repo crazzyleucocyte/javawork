@@ -71,7 +71,7 @@ public class MusicView {
 	}
 
 //-------------------------------------------------	
-//	마지막 위치에 곡 추가 성공을 알리는 메소드
+//	사용자에게 입력 받은 후 예/아니오/나가기를 입력 받아 재확인 후 마지막 위치에 곡 추가 성공을 알리는 메소드
 	public void addList() {
 		checker = true;
 		while (checker) {
@@ -84,6 +84,7 @@ public class MusicView {
 			System.out.println("곡 명 : " + inputTitle + ", 가수명 : " + inputSinger);
 			System.out.print("예(Y) or 아니오(N) or 메뉴화면으로 나가기(X)\nanswer : ");
 
+//			사용자에게 y/n/x를 받아서 재확인 
 			int answer = yOrN();
 //			 y인 경우
 			if (answer == 1) {
@@ -114,7 +115,7 @@ public class MusicView {
 	}
 
 //-------------------------------------------------	
-//	첫 위치에 곡 추가 성공을 알리게하는 메소드
+//	사용자에게 입력 받은 후 예/아니오/나가기를 입력 받아 재확인 후 첫 위치에 곡 추가 성공을 알리는 메소드
 	public void addAtZero() {
 		checker = true;
 		while (checker) {

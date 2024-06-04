@@ -37,7 +37,7 @@ public class MusicController {
 	}
 //-------------------------------------------------	
 //	곡 명을 검색하는 메소드
-	//반환값 자료형을 제네릭으로 오브젝트를 하면 int형도 반환 가능 일단 하라는데로 하고 최적화 시 변경 필요
+	//반환값 자료형을 제네릭으로 오브젝트를 하면 int형도 반환 가능 일단 하라는데로 하고 나중에 변경 필요
 	public Music searchMusic(String title) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getTitle().equals(title))
