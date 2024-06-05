@@ -1,4 +1,4 @@
-package _06_Network;
+package _06_Ex_Network.copy;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -6,7 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ServerProgram {
+public class Ex_ServerProgram {
 	//자세한 설명이 되어있음
 	//https://m.blog.naver.com/ka28/221946760265
 		
@@ -44,7 +44,7 @@ public class ServerProgram {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		// 1)포트번호 지정
-		int port = 9003;
+		int port = 9004;
 		
 		BufferedReader br=null;	//입력용 스트림/보조스트림
 		PrintWriter pw = null; //출력용 스트림./보조스트림
@@ -89,10 +89,10 @@ public class ServerProgram {
 			while(true) {
 			//7. 스트림을 통해 읽고 쓰기
 				//클라이언트측의 메시지 읽기
-				System.out.println("클라이언트 : "+br.readLine());
+				System.out.println("요한님 : "+br.readLine());
 				
 				//클라이언트에게 메시지 보내기
-				System.out.print("서버 : ");
+				System.out.print("나 : ");
 				pw.println(sc.nextLine());
 				pw.flush();
 			}
