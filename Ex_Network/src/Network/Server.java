@@ -4,6 +4,10 @@ import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
+
+
+
+
 public class Server {
 
 	public static void main(String[] args) {
@@ -26,18 +30,34 @@ public class Server {
 //			PrintWriter pr=new PrintWriter(os,true);
 			
 			pr.println("환영합니다.");
-			while(true) {
-				System.out.println("클라이언트 : ");
-				System.out.println( br.readLine());
+			
+			Runnable r = new Runnable() {
 				
-				System.out.println("서버 : ");
+				@Override
+				public void run() {
+					try {
+						while(br!=null)
+							System.out.println("클라이언트 : "+br.readLine());
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
+				
+			};
+			
+			Thread thr = new Thread(r);
+			thr.setDaemon(true);
+			thr.start();
+			
+			while(true) {
+				
+				System.out.print("서버 : ");
 				pr.println(s.nextLine());
+				
 				pr.flush();
 			}
-			
-			
-			
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
