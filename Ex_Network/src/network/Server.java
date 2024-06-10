@@ -43,7 +43,7 @@ public class Server {
 
 				pr.println("환영합니다.");
 				pr.flush();
-				Runnable r = new Runnable() {
+				/*Runnable r = new Runnable() {
 
 					@Override
 					public void run() {
@@ -73,37 +73,41 @@ public class Server {
 						}
 					}
 
-				
+
 
 			};
 
-			Thread thr = new Thread(r);
-			thr.setDaemon(true);
-			thr.start();
-			String msg;
-			while(endCheck) {
-				System.out.println();
-				msg=s.nextLine();
-				System.out.print("서버 : "+msg);
-				pr.println(msg);
-				pr.flush();
-				if(msg.equals("!exit")) {
-					pr.println("서버가 대화 종료를 했습니다.");
-					endCheck(false);
-					break;
+				 */
+				Reader read = new Reader("클라이언트",br,pr);
+
+				Thread thr = new Thread(read);
+				thr.setDaemon(true);
+				thr.start();
+				String msg;
+
+				while(endCheck) {
+					System.out.println();
+					msg=s.nextLine();
+					System.out.print("서버 : "+msg);
+					pr.println(msg);
+					pr.flush();
+					if(msg.equals("!exit")) {
+						pr.println("서버가 대화 종료를 했습니다.");
+						endCheck(false);
+						break;
+					}
 				}
+				System.out.println("대화를 종료합니다.");
 			}
-			System.out.println("대화를 종료합니다.");
+		} catch (Exception e) {
+			s.close();
+			e.printStackTrace();
 		}
-	} catch (Exception e) {
-		s.close();
-		e.printStackTrace();
+
+
+
+
 	}
-
-
-
-
-
 }
 
-}
+

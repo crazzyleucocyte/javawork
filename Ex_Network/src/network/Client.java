@@ -27,32 +27,11 @@ public class Client {
 				System.out.println("연결 성공");
 				System.out.println(br.readLine());
 				
-				Runnable r = new Runnable() {
-
-					@Override
-					public void run() {
-						try {
-							String read ;
-							while ((!(read = br.readLine()).equals(null))||endCheck!=false) {
-								System.out.println("\n서버 : "+read);
-								if(read.equals("!exit")) {
-									System.out.println("서버가 대화를 종료했습니다.");
-									endCheck(false);
-									break;
-								}
-							}
-						} catch (NullPointerException e) {
-							System.out.println("서버가 대화를 종료했습니다.null");
-							endCheck(false);
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-				};
+//				
+				Reader read = new Reader("서버",br,pw);
 
 				
-				Thread thr = new Thread(r);
+				Thread thr = new Thread(read);
 				thr.setDaemon(true);
 				thr.start();
 				String msg;
