@@ -42,7 +42,10 @@ public class Server {
 				//			PrintWriter pr=new PrintWriter(os,true);
 
 				pr.println("환영합니다.");
+				pr.println("닉네임을 입력해주세요 : ");
 				pr.flush();
+				String name = br.readLine();
+				
 				/*Runnable r = new Runnable() {
 
 					@Override
@@ -78,14 +81,14 @@ public class Server {
 			};
 
 				 */
-				Reader read = new Reader("클라이언트",br,pr);
+				Reader read = new Reader(name,br,pr);
 
 				Thread thr = new Thread(read);
 				thr.setDaemon(true);
 				thr.start();
 				String msg;
 
-				while(endCheck) {
+				while(read.endCheck) {
 					System.out.println();
 					msg=s.nextLine();
 					System.out.print("서버 : "+msg);

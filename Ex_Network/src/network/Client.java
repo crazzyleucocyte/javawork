@@ -26,6 +26,7 @@ public class Client {
 					PrintWriter pw = new PrintWriter(client.getOutputStream(), true);) {
 				System.out.println("연결 성공");
 				System.out.println(br.readLine());
+				System.out.println(br.readLine());
 				
 //				
 				Reader read = new Reader("서버",br,pw);
@@ -35,11 +36,12 @@ public class Client {
 				thr.setDaemon(true);
 				thr.start();
 				String msg;
-				while (endCheck) {
-					
+				String name = s.nextLine();
+				pw.println(name);
+				while (read.endCheck) { 
 					System.out.println();
 					msg = s.nextLine();
-					System.out.print("클라이언트 : "+msg);
+					System.out.print(name+" : "+msg);
 					pw.println(msg);
 					pw.flush();
 					if(msg.equals("!exit")) {

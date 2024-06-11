@@ -48,21 +48,27 @@ public class Reader implements Runnable{
 					pw.println(date.format(now));
 				}else if(read.equals("!exit")) {
 
-					System.out.println("클라이언트가 대화를 종료했습니다.");
+					System.out.println(name+"가 대화를 종료했습니다.");
 					endCheck(false);
 					break;
 				}
 			}
 		} catch (NullPointerException e) {
-			System.out.println("클라이언트가 대화를 종료했습니다.");
+			System.out.println(name+"가 대화를 종료했습니다.");
 			endCheck(false);
+	
 
 		} catch (SocketException e) {
-			System.out.println("클라이언트가 접속을 종료했습니다.");
-			e.printStackTrace();
+			System.out.println(name+"가 접속을 종료했습니다.");
+			endCheck(false);
+	
 		} catch (IOException e) {
+			endCheck(false);
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			System.out.println("대화가 종료되었습니다.");
+			endCheck(false);
 		}
 	}
 
