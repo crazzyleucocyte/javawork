@@ -90,8 +90,7 @@ public class Server {
 
 				while(read.endCheck) {
 					System.out.println();
-					msg=s.nextLine();
-					System.out.print("서버 : "+msg);
+					System.out.print("서버 : "+(msg=s.nextLine()));
 					pr.println(msg);
 					pr.flush();
 					if(msg.equals("!exit")) {

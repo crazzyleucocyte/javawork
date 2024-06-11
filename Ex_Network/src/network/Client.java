@@ -5,7 +5,6 @@ import java.net.*;
 import java.util.Scanner;
 
 public class Client {
-	
 	static boolean endCheck=true;
 	
 	synchronized static boolean endCheck(boolean check) {
@@ -35,16 +34,17 @@ public class Client {
 				Thread thr = new Thread(read);
 				thr.setDaemon(true);
 				thr.start();
-				String msg;
+				
+				StringBuffer msg=new StringBuffer(500);
 				String name = s.nextLine();
 				pw.println(name);
 				while (read.endCheck) { 
-					System.out.println();
-					msg = s.nextLine();
-					System.out.print(name+" : "+msg);
+					
+						System.out.println();
+						System.out.print(name+" : "+(msg.replace(0, msg.length(),s.nextLine())));
 					pw.println(msg);
 					pw.flush();
-					if(msg.equals("!exit")) {
+					if(msg.toString().equalsIgnoreCase("!exit")) {
 						pw.println("클라이언트가 대화 종료를 했습니다.");
 						endCheck(false);
 						break;
