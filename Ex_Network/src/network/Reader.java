@@ -14,6 +14,7 @@ public class Reader implements Runnable{
 	static boolean endCheck=true;
 	String name;
 	
+	
 	Date now = new Date();
 	SimpleDateFormat date = new SimpleDateFormat("yyyy년 MM월 dd일");
 	SimpleDateFormat time = new SimpleDateFormat("a hh시 mm분");
