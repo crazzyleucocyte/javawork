@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
 public class Reader_callable implements Callable{
 
 	PrintWriter pw;
-	BufferedReader br= new BufferedReader(new InputStreamReader(System.in));;
+	BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
 	static boolean endCheck=true;
 	String name;
 	StringBuffer msg;
@@ -28,6 +28,11 @@ public class Reader_callable implements Callable{
 		this.pw=pw;
 		this.name = name;
 		this.msg=msg;
+	}
+
+
+
+	public Reader_callable() {
 	}
 
 

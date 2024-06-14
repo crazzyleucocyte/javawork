@@ -17,9 +17,6 @@ public class Server {
 
 
 	public static void main(String[] args) {
-		Date now = new Date();
-		SimpleDateFormat date = new SimpleDateFormat("yyyy년 MM월 dd일");
-		SimpleDateFormat time = new SimpleDateFormat("a hh시 mm분");
 
 		Scanner s = new Scanner(System.in);
 		int port = 9001;
