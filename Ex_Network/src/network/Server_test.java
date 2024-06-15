@@ -8,12 +8,13 @@ import java.util.Date;
 import java.util.Scanner;
 
 // 쓰레드 메소드 중 wait을 써서 클라이언트가 처음에 보내기 전까지는 기다리도록 할 수도 있다 
-public class Server {
+public class Server_test {
 	static boolean endCheck=true;
 
 	synchronized static boolean endCheck(boolean check) {
 		return endCheck=check;
 	}
+	Runnable run = run(()->System.out.println());
 
 
 	public static void main(String[] args) {
@@ -106,6 +107,12 @@ public class Server {
 
 
 
+	}
+
+
+	private Runnable run(Object object) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 
