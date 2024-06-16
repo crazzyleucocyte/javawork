@@ -57,11 +57,13 @@ public class Reader implements Runnable{
 		} catch (NullPointerException e) {
 			System.out.println(name+"가 대화를 종료했습니다.");
 			endCheck(false);
+			e.printStackTrace();
 	
 
 		} catch (SocketException e) {
 			System.out.println(name+"가 접속을 종료했습니다.");
 			endCheck(false);
+			e.printStackTrace();
 	
 		} catch (IOException e) {
 			endCheck(false);
