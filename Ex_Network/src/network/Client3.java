@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
-public class Client {
+public class Client3 {
 	static boolean endCheck=true;
 
 	synchronized static boolean endCheck(boolean check) {
@@ -52,6 +52,7 @@ public class Client {
 						ExecutorService executor = Executors.newSingleThreadExecutor();
 						Future<String> future2 = executor.submit(tr); //
 						String out =future2.get();
+						//						Thread.sleep(100);
 						System.out.println(name + " : "+out);
 						pw.println(out);
 						pw.flush();

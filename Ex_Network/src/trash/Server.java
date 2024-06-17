@@ -1,4 +1,4 @@
-package network;
+package trash;
 
 import java.io.*;
 import java.net.*;
@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
+
+import network.Clients_Reader;
 
 // 쓰레드 메소드 중 wait을 써서 클라이언트가 처음에 보내기 전까지는 기다리도록 할 수도 있다 
 public class Server {
@@ -78,15 +80,15 @@ public class Server {
 			};
 
 				 */
-				Reader read = new Reader(name,br,pr);
+				Clients_Reader read = new Clients_Reader(name,br,pr);
 
 				Thread thr = new Thread(read);
 				thr.setDaemon(true);
 				thr.start();
 				String msg;
 
-				while(read.endCheck&&endCheck!=false) {
-					System.out.println();
+				while (/*read.endCheck&&*/endCheck!=false) {
+					System.out.println(555555);
 					System.out.print("서버 : "+(msg=s.nextLine()));
 					pr.println(msg);
 					pr.flush();

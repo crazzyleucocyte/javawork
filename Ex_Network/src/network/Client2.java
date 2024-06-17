@@ -35,7 +35,7 @@ public class Client2 {
 				//				//서버에서 읽어온 값과 서버로 보낼 값을 저장하는 StringBuffer////동기화 예정
 
 				//서버의 메시지를 읽어오는 read tread객체 생성
-				Reader read = new Reader("서버",br,pw);
+				Clients_Reader read = new Clients_Reader("서버",br,pw);
 				Thread thr = new Thread(read);
 
 				//리더 쓰레드를 데몬쓰레드로 지정하고 쓰레드 시작
@@ -46,7 +46,7 @@ public class Client2 {
 				String name = s.nextLine();
 				pw.println(name);
 
-				Turn tr = new Turn();
+				Client_Writer tr = new Client_Writer();
 				while(read.endCheck&&endCheck!=false) {
 					try {
 						ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -56,7 +56,6 @@ public class Client2 {
 						System.out.println(name + " : "+out);
 						pw.println(out);
 						pw.flush();
-						executor.shutdown();
 						if(out.equalsIgnoreCase("!exit")) {
 							pw.println("클라이언트가 대화 종료를 했습니다.");
 							endCheck(false);

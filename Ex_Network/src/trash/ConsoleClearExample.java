@@ -1,4 +1,4 @@
-package network;
+package trash;
 
 import java.util.Scanner;
 import java.io.*;
