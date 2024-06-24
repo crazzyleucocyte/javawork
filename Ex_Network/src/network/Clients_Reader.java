@@ -77,7 +77,7 @@ public class Clients_Reader implements Runnable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			System.out.println("대화가 종료되었습니다.22222");
+			System.out.println("대화가 종료되었습니다.");
 			endCheck(false);
 		}
 	}

@@ -61,15 +61,17 @@ public class Server_Reader implements Runnable{
 					endCheck(false);
 					break;
 				}
+				} catch (NullPointerException e) {
+					System.out.println(name+"가 대화를 종료했습니다.");
+					endCheck(false);
+					e.printStackTrace();
+					break;
 				}catch(Exception e1) {
+					e1.printStackTrace();
 					System.out.println("대화가 종료");
 					
 				}
 			}
-		} catch (NullPointerException e) {
-			System.out.println(name+"가 대화를 종료했습니다.");
-			endCheck(false);
-			e.printStackTrace();
 	
 
 		} catch (SocketException e) {

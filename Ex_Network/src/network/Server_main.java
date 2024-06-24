@@ -40,9 +40,8 @@ public class Server_main {
 				System.out.println("sfsfsfsf");
 				System.out.print("서버 : " + (out = s.nextLine()));
 				System.out.println();
-				System.out.println(Server_welcome.synchronizedClientMap);
 				
-//				synchronized (Server_welcome.synchronizedClientMap) {
+				synchronized (Server_welcome.synchronizedClientMap) {
 					Iterator<PrintWriter> itPrintWriter= Server_welcome.synchronizedClientMap.values().iterator();
 		         
 					while(itPrintWriter.hasNext()) {
@@ -51,29 +50,23 @@ public class Server_main {
 		            	if (out.equalsIgnoreCase("!exit")) {
 		            		pw.println("서버가 대화 종료를 했습니다.77777");
 		            		endCheck(false);
-		            		
-		            		break;
 		            	}
 		            	
 		            }
 					if (out.equalsIgnoreCase("!exit")) {
 						executor.shutdownNow();
-						while(Thread.currentThread()!=null) {
-						Thread.currentThread().interrupt();
-						}
-						
 						break;
 					}
 					
 					
-//				}
+				}
 				
 		            //엔드테그
 				
 			} while (Server_welcome.synchronizedClientMap.size() != 0&&Server_Accepter.endchat&&endCheck);
 			System.out.println("대화를 종료합니다.89898989");
 			s.close();
-			System.exit(0);
+//			System.exit(0);
 		} catch (IOException e1) {
 			s.close();
 		
@@ -81,8 +74,8 @@ public class Server_main {
 			e1.printStackTrace();
 		}catch(Exception e3){
 			s.close();
-			System.out.println(888888888);
-			System.out.println("대화를 종료합니다.");
+			
+			System.out.println("에러가 발생하여 대화를 종료합니다.");
 			e3.printStackTrace();
 //			System.exit(0);
 		}

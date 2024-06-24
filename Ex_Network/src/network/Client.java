@@ -73,10 +73,9 @@ public class Client {
 					}
 //					out.equalsIgnoreCase("!exit")
 				}while(read.endCheck&&endCheck!=false);
-				System.out.println("대화를 종료합니다.11111");
+				System.out.println("대화를 종료합니다.");
 				executor.shutdown();
 				endCheck(false);
-				System.out.println(Thread.currentThread().getName());
 				s.close();
 				thr.interrupt();
 			}
@@ -85,7 +84,6 @@ public class Client {
 			s.close();
 			e.printStackTrace();
 		} 
-		System.out.println("main");
 	}
 
 }

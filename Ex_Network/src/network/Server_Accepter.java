@@ -45,7 +45,7 @@ public class Server_Accepter implements Callable<Socket>{
 				th.start();
 				System.out.println();
 			}catch(SocketException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
 				endchat= false;
 				return null;
 //				System.out.println(123123123123123123l);
