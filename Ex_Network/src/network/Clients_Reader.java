@@ -15,9 +15,7 @@ public class Clients_Reader implements Runnable{
 	String name;
 	
 	
-	Date now = new Date();
-	SimpleDateFormat date = new SimpleDateFormat("yyyy년 MM월 dd일");
-	SimpleDateFormat time = new SimpleDateFormat("a hh시 mm분");
+	
 	
 	
 	public Clients_Reader(String name,BufferedReader br, PrintWriter pw) {
@@ -56,9 +54,7 @@ public class Clients_Reader implements Runnable{
 					System.out.println("\n"+name+" : "+read);
 				}
 				
-				if(read.equals("!today")) {
-					pw.println(date.format(now));
-				}else if(read.equals("!exit")) {
+				if(read.equals("!exit")) {
 
 					System.out.println(name+"가 대화를 종료했습니다.");
 					endCheck(false);
@@ -81,7 +77,7 @@ public class Clients_Reader implements Runnable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			System.out.println("대화가 종료되었습니다.");
+			System.out.println("대화가 종료되었습니다.22222");
 			endCheck(false);
 		}
 	}

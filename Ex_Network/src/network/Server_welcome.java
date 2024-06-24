@@ -41,12 +41,15 @@ public class Server_welcome implements Runnable {
 			synchronized(synchronizedClientMap) {
 			synchronizedClientMap.put(name, pr);
 			}
-			new Thread(new Server_Reader(name, br, pr), name).start();
-			;
-			while (true) {
-				Thread.sleep(10000);
+			Server_Reader reader=new Server_Reader(name, br, pr);
+			Thread thr1=new Thread(reader, name);
+//			thr1.setDaemon(true);
+			thr1.start();
+			
+			while (Server_Reader.endCheck) {
+				Thread.sleep(1000);
 			}
-
+			System.out.println("웰컴 끝");
 		} catch (Exception e) {
 			e.printStackTrace();
 

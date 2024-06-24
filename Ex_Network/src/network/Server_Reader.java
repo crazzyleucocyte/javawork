@@ -47,20 +47,23 @@ public class Server_Reader implements Runnable{
 			}
 			
 			while(Server_welcome.synchronizedClientMap.size() != 0) {
+				try {
 				read=br.readLine();
 				synchronized(System.out) {
 					System.out.println("\n"+name+" : "+read);
 				}
 				
-				if(read.equals("!today")) {
-					pw.println(date.format(now));
-				}else if(read.equals("!exit")) {
+				if(read.equals("!exit")) {
 					synchronized (Server_welcome.synchronizedClientMap) {
 						Server_welcome.synchronizedClientMap.remove(name);
 					}
 					System.out.println(name+"가 대화를 종료했습니다.");
 					endCheck(false);
 					break;
+				}
+				}catch(Exception e1) {
+					System.out.println("대화가 종료");
+					
 				}
 			}
 		} catch (NullPointerException e) {
@@ -72,7 +75,7 @@ public class Server_Reader implements Runnable{
 		} catch (SocketException e) {
 			System.out.println(name+"가 접속을 종료했습니다.");
 			endCheck(false);
-//			e.printStackTrace();
+			e.printStackTrace();
 	
 		} catch (IOException e) {
 			endCheck(false);

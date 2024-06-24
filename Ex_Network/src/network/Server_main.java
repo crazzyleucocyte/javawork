@@ -36,32 +36,55 @@ public class Server_main {
 			ExecutorService executor = Executors.newSingleThreadExecutor();
 			Future<Socket> fture = executor.submit(acc); // 서버에서 클라이언트를 계속 받는 쓰레드 실행
 
+			chat: do{
+				System.out.println("sfsfsfsf");
 				System.out.print("서버 : " + (out = s.nextLine()));
 				System.out.println();
-				chat: while (Server_welcome.synchronizedClientMap.size() != 0) {
+				System.out.println(Server_welcome.synchronizedClientMap);
 				
-				synchronized (Server_welcome.synchronizedClientMap) {
+//				synchronized (Server_welcome.synchronizedClientMap) {
 					Iterator<PrintWriter> itPrintWriter= Server_welcome.synchronizedClientMap.values().iterator();
 		         
 					while(itPrintWriter.hasNext()) {
-		            	itPrintWriter.next().println(out);//클라이언트들에게 메세지 전송
+		            	PrintWriter pw=itPrintWriter.next();
+		            	pw.println(out);//클라이언트들에게 메세지 전송
 		            	if (out.equalsIgnoreCase("!exit")) {
-		            		itPrintWriter.next().println("서버가 대화 종료를 했습니다.");
+		            		pw.println("서버가 대화 종료를 했습니다.77777");
 		            		endCheck(false);
+		            		
 		            		break;
 		            	}
 		            	
 		            }
+					if (out.equalsIgnoreCase("!exit")) {
+						executor.shutdownNow();
+						while(Thread.currentThread()!=null) {
+						Thread.currentThread().interrupt();
+						}
+						
+						break;
+					}
 					
 					
-				}
-		            
+//				}
 				
-			}
-			System.out.println("대화를 종료합니다.");
+		            //엔드테그
+				
+			} while (Server_welcome.synchronizedClientMap.size() != 0&&Server_Accepter.endchat&&endCheck);
+			System.out.println("대화를 종료합니다.89898989");
+			s.close();
+			System.exit(0);
 		} catch (IOException e1) {
+			s.close();
+		
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		}catch(Exception e3){
+			s.close();
+			System.out.println(888888888);
+			System.out.println("대화를 종료합니다.");
+			e3.printStackTrace();
+//			System.exit(0);
 		}
 	}
 }

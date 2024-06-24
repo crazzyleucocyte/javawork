@@ -45,37 +45,47 @@ public class Client {
 				//클라이언트의 채팅 닉네임을 받는 부분
 				String name = s.nextLine();
 				pw.println(name);
-
+				ExecutorService executor=null;
 				Client_Writer tr = new Client_Writer();
-				while(read.endCheck&&endCheck!=false) {
+				String out=null;
+				 do{
 					try {
-						ExecutorService executor = Executors.newSingleThreadExecutor();
-						Future<String> future2 = executor.submit(tr); //
-						String out =future2.get();
+						executor = Executors.newSingleThreadExecutor();
+						Future<String> future2 = executor.submit(tr); 
+						out =future2.get();
 						System.out.println(name + " : "+out);
 						pw.println(out);
 						pw.flush();
+						executor.shutdown();
 						if(out.equalsIgnoreCase("!exit")) {
 							pw.println("클라이언트가 대화 종료를 했습니다.");
-							endCheck(false);
+							
 							break;
 						}
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+						break;
 					} catch (ExecutionException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+						break;
 					}
-				}
-				System.out.println("대화를 종료합니다.");
+//					out.equalsIgnoreCase("!exit")
+				}while(read.endCheck&&endCheck!=false);
+				System.out.println("대화를 종료합니다.11111");
+				executor.shutdown();
+				endCheck(false);
+				System.out.println(Thread.currentThread().getName());
+				s.close();
+				thr.interrupt();
 			}
 
 		} catch (Exception e) {
 			s.close();
 			e.printStackTrace();
 		} 
-
+		System.out.println("main");
 	}
 
 }
