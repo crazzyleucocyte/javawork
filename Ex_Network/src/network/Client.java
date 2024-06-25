@@ -59,7 +59,7 @@ public class Client {
 						executor.shutdown();
 						if(out.equalsIgnoreCase("!exit")) {
 							pw.println("클라이언트가 대화 종료를 했습니다.");
-							
+							Thread.sleep(200);
 							break;
 						}
 					} catch (InterruptedException e) {

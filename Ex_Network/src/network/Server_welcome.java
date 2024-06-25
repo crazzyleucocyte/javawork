@@ -46,10 +46,9 @@ public class Server_welcome implements Runnable {
 //			thr1.setDaemon(true);
 			thr1.start();
 			
-			while (Server_Reader.endCheck) {
+			while (reader.endCheck) {
 				Thread.sleep(1000);
 			}
-			System.out.println("웰컴 끝");
 		} catch (Exception e) {
 			e.printStackTrace();
 

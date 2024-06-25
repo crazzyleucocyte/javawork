@@ -44,7 +44,8 @@ public class Clients_Reader implements Runnable{
 //					System.out.println(99999);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					break;
+//					e.printStackTrace();
 				}	//bufferdReader에 시스템으로부터 입력받은 값이 없을경우 while문의ready가 true가 되어 계속 sleep한다.
 			}
 			///6월 17일 마지막 여기가 문제인듯
@@ -75,7 +76,7 @@ public class Clients_Reader implements Runnable{
 		} catch (IOException e) {
 			endCheck(false);
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+//			e.printStackTrace();
 		} finally {
 			System.out.println("대화가 종료되었습니다.");
 			endCheck(false);

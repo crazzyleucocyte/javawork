@@ -11,7 +11,7 @@ public class Server_Reader implements Runnable{
 	
 	PrintWriter pw;
 	BufferedReader br;
-	static boolean endCheck=true;
+	boolean endCheck=true;
 	String name;
 	Server_Accepter acc = new Server_Accepter();
 	
@@ -27,7 +27,7 @@ public class Server_Reader implements Runnable{
 		this.name = name;
 	}
 	
-	static boolean endCheck(boolean check) {
+	boolean endCheck(boolean check) {
 		return endCheck=check;
 	}
 	
@@ -46,14 +46,14 @@ public class Server_Reader implements Runnable{
 				}	//bufferdReader에 시스템으로부터 입력받은 값이 없을경우 while문의ready가 true가 되어 계속 sleep한다.
 			}
 			
-			while(Server_welcome.synchronizedClientMap.size() != 0) {
+			 do{
 				try {
 				read=br.readLine();
 				synchronized(System.out) {
 					System.out.println("\n"+name+" : "+read);
 				}
 				
-				if(read.equals("!exit")) {
+				if(read.equalsIgnoreCase("!exit")) {
 					synchronized (Server_welcome.synchronizedClientMap) {
 						Server_welcome.synchronizedClientMap.remove(name);
 					}
@@ -68,10 +68,11 @@ public class Server_Reader implements Runnable{
 					break;
 				}catch(Exception e1) {
 					e1.printStackTrace();
-					System.out.println("대화가 종료");
+					System.out.println("오류로 인해 대화가 종료되었습니다.");
+					break;
 					
 				}
-			}
+			}while(Server_welcome.synchronizedClientMap.size() != 0&&endCheck);
 	
 
 		} catch (SocketException e) {
