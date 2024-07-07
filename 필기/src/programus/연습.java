@@ -4,20 +4,20 @@ package programus;
 public class 연습 {
 
 	public static void main(String[] args) {
-		//valueOf
-		
-	int a = 13;
-	String str="";
-	str+=String.valueOf(a);
-	System.out.println(str);
-	int b = 384;
-	str+=String.valueOf(b);
-	System.out.println(str);
-		
-		System.out.println(Math.max(a, b));
-		Solution s = new Solution();
-		System.out.println( s.solution("afghtf"));
-		
+//		//valueOf
+//		
+//	int a = 13;
+//	String str="";
+//	str+=String.valueOf(a);
+//	System.out.println(str);
+//	int b = 384;
+//	str+=String.valueOf(b);
+//	System.out.println(str);
+//		
+//		System.out.println(Math.max(a, b));
+//		Solution2 s = new Solution2();
+//		System.out.println( s.solution("afghtf"));
+//		
 	}
 
 	private static char[] isOdd(int a) {
